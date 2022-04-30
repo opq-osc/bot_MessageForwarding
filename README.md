@@ -1,0 +1,2 @@
+# bot_MessageForwarding
+基于OPQBot和botoy的消息监控转发插件
