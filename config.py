@@ -154,8 +154,6 @@ def set_boss_uin(uin="", pattern="0"):
 # 设置私聊监听模式
 def set_friend_type(pattern="-1"):
     json_dict = get_json_data()
-    friend_key = []  # 私聊监听关键词列表
-    friend_uin = []  # 私聊监听UIN列表
     if pattern == "-1":
         json_dict['data']['set'][0]['monitor'][0]['friend_type'] = "-1"
         write_json_data(json_dict)
