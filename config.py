@@ -58,18 +58,16 @@ def write_json_data(json_dict):
 
 # 获取QQ昵称
 def get_name(uin):
-    url = "http://xiaoapi.cn/api/qqnick.php"
+    url = "http://api.xtaoa.com/api/qqinfo.php"
     params = {
         "qq": uin
     }
     try:
-        res = httpx.get(url, params=params).text
-        if res.find("<html>") != -1:
-            return str(uin)
+        res = httpx.get(url, params=params).json()
     except Exception as e:
         logger.warning(f"昵称请求失败\r\n {e}")
         return str(uin)
-    return res
+    return res['name']
 
 
 # 获取回复人UIN
